@@ -23,9 +23,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var contactTableView: UITableView!
     var contactArray = [Contact]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configuration()
+        contactArray = DatabaseHelper.shared.fetchContacts()
+            contactTableView.reloadData()
         
     }
     

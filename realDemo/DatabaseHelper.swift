@@ -22,5 +22,11 @@ class DatabaseHelper {
             realm.add(contact)
         }
         }
+    //
+    func fetchContacts() -> [Contact] {
+        let contacts = realm.objects(Contact.self)
+        return Array(contacts)
+    }
+
     }
 
